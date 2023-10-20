@@ -1,4 +1,3 @@
-# Socratic tutor interface
+# PragCycle
 
-Interface that allows you to upload notes and then get queried by a socratic tutor
-to improve recall of the imformation
+Prague public recycling tracking and gamification
