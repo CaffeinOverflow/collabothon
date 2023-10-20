@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "allowImportingTsExtensions": true,
+        "moduleResolution": "Bundler",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "noEmit": true,
+        "module": "ESNext",
+        "jsx": "react"
+    },
+    "include": [
+        "src/custom.d.ts"
+    ]
+}
