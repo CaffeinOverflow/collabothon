@@ -113,10 +113,10 @@ function Leaderboard({ toMap }) {
         </tbody>
       </table>
       <button
-      type="submit"
-      className="w-[90%] md:w-[30%] mt-10 py-3 px-6 bg-blue-300 hover:opacity-70 rounded-full mx-auto shadow-xl shadow-light-blue"
-      style={{ float: "right" }}
-      onClick={toMap}
+        type="submit"
+        className="w-[90%] md:w-[30%] mt-10 py-3 px-6 bg-blue-300 hover:opacity-70 rounded-full mx-auto shadow-xl shadow-light-blue"
+        style={{ float: "right" }}
+        onClick={toMap}
       >
         Map View
       </button>
