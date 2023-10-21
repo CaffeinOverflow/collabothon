@@ -26,7 +26,7 @@ const BINS = [
     color: "blue",
   },
 ]
-const MAPS_API_KEY="<add your key here>"
+const MAPS_API_KEY= process.env.MAPS_API_KEY ?? "<add-your-key-here>"
 
 function Root() {
   const [showMap, setShowMap] = useState(false);
