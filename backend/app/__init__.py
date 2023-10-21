@@ -6,14 +6,10 @@ from firebase_admin import credentials, firestore, initialize_app
 from google.auth import default
 
 # Initialize Firestore DB
-
-
-
 db = firestore.Client(project="collabothon23fra-1265")
 todo_ref = db.collection('todos')
 
 bootstrap = Bootstrap()
-
 
 def create_app(config_name):
     app = Flask(__name__)
