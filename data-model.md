@@ -46,7 +46,7 @@ POST /bin/{:binId}/collection
 
 GET /bin/stats
     params:
-        statsFrom?: datetime
+
     returns:
         stats: list[BinStats]
     
