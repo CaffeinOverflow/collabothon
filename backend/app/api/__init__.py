@@ -5,25 +5,28 @@ from app import db
 import base64
 from PIL import Image
 import io
+from .vision import detect_plastics
 
 api = Blueprint('api', __name__)
+
 
 @api.post('/bin/<int:binId>/collection/')
 def create_collection_event(binId):
     try:
-        bin_ref = db.collection("bins").document(str(binId))
-        category = request.json["category"]
         weight = request.json["weight"]
         if 'photo' not in request.json:
             return jsonify({"error": 'No file part'}), 400
 
         file = request.json['photo']
-
         img_bytes = base64.b64decode(file.encode('utf-8'))
         img = Image.open(io.BytesIO(img_bytes))
         
-        if category not in ["General", "Plastic"]:
-            return jsonify({"error": "Invalid category"}), 400
+        contains_plastic = detect_plastics(img)
+
+        if contains_plastic :
+            category = 'Plastic'
+        else:
+            category = 'General'
 
         collection_event = CollectionEvent(binId, category, weight)
         db.collection("bins").document(str(binId)).push(collection_event.__dict__)
